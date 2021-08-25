@@ -18,3 +18,23 @@ export const ADD_POST = gql`
         }
     }
 `;
+
+
+export const DELETE_BLOGPOST = gql`
+    mutation DeleteBlogPost($id:String){
+        deleteBlogPost(id: $id){
+            id
+            text
+        }
+    }
+`;
+
+
+export const EDIT_BLOGPOST = gql`
+    mutation EditBlogPost($id: String, $text:String){
+        editBlogPost(id:$id, text:$text){
+            id
+            text
+        }
+    }
+`;

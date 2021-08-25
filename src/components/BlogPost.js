@@ -11,7 +11,7 @@ const useStyles = makeStyles({
     },
   });
 
-function BlogPost({id, text}) {
+function BlogPost({id, text, onDelete,openModal}) {
     const classes = useStyles();
     return (
         <Card className={classes.spacing}>

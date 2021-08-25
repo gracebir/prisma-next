@@ -4,7 +4,7 @@ import BlogPost from "./BlogPost";
 
 
 
-function BlogPosts() {
+function BlogPosts({ onDelete,openModal}) {
     const { loading, error, data } = useQuery(GET_BLOGPOSTS);
 
     if(loading){
@@ -16,7 +16,7 @@ function BlogPosts() {
     }
 
     console.log(data);
-    return data.blogPosts.map((blogPost, i)=> <BlogPost key={i} {...blogPost}/>)
+    return data.blogPosts.map((blogPost, i)=> <BlogPost onDelete={onDelete} openModal={openModal}  key={i} {...blogPost}/>)
 }
 
 export default BlogPosts
